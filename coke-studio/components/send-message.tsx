@@ -14,7 +14,11 @@ export default function SendMessage() {
       return;
     }
     try {
-      const res = await Axios.post('/message', phone);
+      const res = await Axios.post('/message', phone, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       toast({
         title: 'Message Sent',
         // description: res?.data || 'Message sent successfully',
