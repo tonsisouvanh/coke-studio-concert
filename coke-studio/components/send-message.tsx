@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Button } from './ui/button';
-import { Axios } from '@/app/config/axios.config';
+import { Axios } from '@/config/axios.config';
 import { Input } from './ui/input';
 import { toast } from '@/hooks/use-toast';
 
