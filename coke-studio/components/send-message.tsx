@@ -14,7 +14,6 @@ export default function SendMessage() {
     }
     try {
       const res = await Axios.post('/send-message', { phone });
-      console.log('🚀 ~ handleSendMessage ~ res:', res.data);
       toast({
         title: 'Message Sent',
         // description: res?.data || 'Message sent successfully',
