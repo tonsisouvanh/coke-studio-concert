@@ -32,7 +32,7 @@ app.use("/", express.static(path.join(__dirname, "public")));
 const tb = new Telbiz(process.env.CLIENT_ID, process.env.CLIENT_SECRET);
 
 // Test seding whatsapp message
-app.post("/send_sms", async (req, res) => {
+app.post("/api/send_sms", async (req, res) => {
   const { phone } = req.body;
   const otp = Math.floor(100000 + Math.random() * 900000);
   let msg = `Here is your OTP: ${otp}`;
