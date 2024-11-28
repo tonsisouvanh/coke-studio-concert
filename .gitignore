@@ -1,0 +1,44 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+coke-studio/node_modules
+telbiz-api/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+coke-studio/coverage
+telbiz-api/coverage
+
+# next.js
+coke-studio/.next/
+coke-studio/out/
+
+# production
+coke-studio/build
+telbiz-api/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+coke-studio/.env*.local
+coke-studio/.env
+telbiz-api/.env*.local
+telbiz-api/.env
+
+# vercel
+coke-studio/.vercel
+telbiz-api/.vercel
+
+# typescript
+coke-studio/*.tsbuildinfo
+coke-studio/next-env.d.ts
+telbiz-api/*.tsbuildinfo
