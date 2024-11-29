@@ -1,4 +1,3 @@
-import { getToken } from 'next-auth/jwt';
 import { NextRequest, NextResponse } from 'next/server';
 
 const roles = ['SUPER_ADMIN', 'ADMIN', 'MODERATOR', 'VENDOR', 'CUSTOMER', 'GUEST'];
@@ -33,22 +32,6 @@ export async function middleware(request: NextRequest) {
 
   // Handle CORS
   response = handleCors(request, response, origin);
-
-  const user = await getToken({
-    req: request,
-    secret: process.env.NEXTAUTH_SECRET,
-  });
-
-  // Get the pathname of the request
-  const { pathname } = request.nextUrl;
-
-  // If the pathname starts with /protected and the user is not an admin, redirect to the home page
-  // if ((pathname.startsWith('/admin') || pathname.startsWith('/random-winners')) && !user) {
-  //   return NextResponse.redirect(new URL('/signin', request.url));
-  // }
-  // if (pathname.startsWith('/signin') && user) {
-  //   return NextResponse.redirect(new URL('/', request.url));
-  // }
 
   // Continue with the request if the user is an admin or the route is not protected
   return response;
